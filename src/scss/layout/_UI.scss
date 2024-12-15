@@ -1,0 +1,68 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.contenedor-app {
+    @include m.tablet{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        min-height: 100vh;
+    }
+
+    .imagen {
+        height: 20rem;
+        background-image: url(../img/1.jpg);
+        background-size: cover;
+        background-position: center center;
+
+        @include m.tablet {
+            height: auto;
+        }
+    }
+ 
+    .app {
+        //overflow: hidden;
+        width: 95%; //el 95% es dentro de lo que ya tiene definido
+        margin: 0 auto; //para que este centrado
+        padding: 3rem 0;
+
+        // Ocultar la barra de desplazamiento en navegadores compatibles
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* Internet Explorer 10+ */
+
+        &::-webkit-scrollbar {
+            display: none; /* Chrome, Safari y Edge */
+        }
+
+        @include m.tablet {
+            overflow: scroll;
+        }
+    }
+}
+
+.barra {
+    //margin: 0; //Un poco de separacion
+
+    @include m.tablet {
+        display: flex; ////Para que se pongan de izquierda a derecha
+        justify-content: space-between; //Para que se separen dependiendo del espacio disponible
+        align-items: center;
+    }
+
+    .boton {
+        @include m.boton(v.$negro, v.$blanco);
+    }
+}
+
+.barra-servicios {
+    margin-bottom: v.$separacion;
+
+    @include m.tablet {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .boton {
+        margin: 0 0 1rem 0;
+    }
+}
+  

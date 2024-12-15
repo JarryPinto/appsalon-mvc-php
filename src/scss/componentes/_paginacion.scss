@@ -1,0 +1,20 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.paginacion {
+    padding: v.$separacion 0; //Un poco de separacion
+
+    @include m.telefono {
+        display: flex; ////Para que se pongan de izquierda a derecha
+        justify-content: space-between; //Para que se separen dependiendo del espacio disponible
+    }
+
+    button {
+        margin: 0 0 1.2rem 0;
+    }
+} 
+
+.ocultar {
+    //display: none;  // Quita el elemento del DOM
+    visibility: hidden; //Se usa este porque mantiene el elemento en su lugar solo que no esta visible
+}

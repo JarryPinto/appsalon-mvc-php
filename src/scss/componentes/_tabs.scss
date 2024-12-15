@@ -1,0 +1,35 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.tabs {
+
+    //padding: 1rem 0 0 0; //Un poco de separacion
+
+    @include m.tablet {
+        display: flex; //Para que se pongan de izquierda a derecha
+    }
+ 
+    button {
+        background-color: v.$azul;
+        border: none;
+        color: v.$blanco;
+        padding: 1rem;
+        display: block; //Para que se pongan uno encima de otro
+        width: 100%; //Para que tome todo el tamaño disponible
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        font-weight: v.$bold;
+        transition: background-color 300ms ease; //Para la transicion de color sea mas lenta
+
+        &:hover {
+            cursor: pointer;
+            background-color: darken(v.$azul, 10%); //Lo va a oscurecer un 10%
+        }
+
+        &.actual {
+            background-color: v.$blanco;
+            color: v.$azul;
+        }
+    }
+}

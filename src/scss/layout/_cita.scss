@@ -1,0 +1,18 @@
+@use 'base/variables' as v;
+
+.seccion {
+    padding: 5rem 0;
+    display: none;  //Esto es para que las secciones se oculten
+
+    .text-center {
+        text-align: center;
+    }
+
+}
+
+.mostrar {
+    display: block; //mostrarlos
+}
+.ocultar {
+    display: none; //ocultarlos
+}
